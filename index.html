@@ -8,11 +8,14 @@
     <!--scripts de jquery-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <!--hojas de estilo de bootstrap y de main.css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    <link rel="stylesheet" href="css/main.css">
     <title>Foodmap</title>
+    <link rel="shortcut icon" href="assets/images/icon.jpg">
 </head>
 
 
@@ -27,46 +30,207 @@
         <div class="foodmap">Foodmap</div>
         <img src="assets/images/linea.png" alt="linea" id="linea">
 
+        <!--mapa-->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d15051.2679097064!2d-99.17186898581392!3d19.42031227715066!3m2!1i1024!2i768!4f13.1!2m1!1sRestaurantes!5e0!3m2!1ses!2smx!4v1516635148635"
+            width="300" height="200" frameborder="0" style="border:0" allowfullscreen id="mapa"></iframe>
+
         <!--input de búsqueda -->
+        <div>
+            <p class="cerca">Comida cerca de ti</p>
+        </div>
         <div class="busqueda">
-            <input id="buscador" type="input" placeholder="filtrar restaurantes" value="">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            <input id="buscador" type="input" placeholder="filtrar restaurantes por tipo" value="">
+            <i class="fa fa-search" aria-hidden="true"></i>
         </div>
 
         <!--contenedores de comidas -->
-        <div class="comida">
-            <div class="contenedorcomida">
-                <label class="tiposComida comidamexicana"></label>
-                <img src="assets/images/mexicana1.jpg" class="foodimg" alt="">
+        <div class="col-xs-12">
+            <div class="row">
+
+                <div class="comida">
+                    <label class="tipo" style="display:none;">comida mexicana</label>
+                    <img src="assets/images/mexicana1.jpg" class="foodimg" alt="" data-toggle="modal" data-target="#tacos">
+                </div>
+
+                <div class="comida">
+                    <label class="tipo" style="display:none;">comida mexicana</label>
+                    <img src="assets/images/mexicana2.jpg" class="foodimg" alt="" data-toggle="modal" data-target="#tradicional">
+
+                </div>
+
+                <div class="comida">
+                    <label class="tipo" style="display:none;">comida china</label>
+                    <img src="assets/images/china1.jpg" class="foodimg" alt="" data-toggle="modal" data-target="#china">
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12">
+            <div class="row">
+
+                <div class="comida">
+                    <label class="tipo" style="display:none;">comida china</label>
+                    <img src="assets/images/china2.jpg" class="foodimg" alt="" data-toggle="modal" data-target="#china2">
+                </div>
+
+                <div class="comida">
+                    <label class="tipo" style="display:none;">pizza</label>
+                    <img src="assets/images/pizza.png" class="foodimg" alt="" data-toggle="modal" data-target="#pizza">
+                </div>
+
+                <div class="comida">
+                    <label class="tipo" style="display:none;">internacional</label>
+                    <img src="assets/images/internacional.jpg" class="foodimg" alt="" data-toggle="modal" data-target="#internacional">
+                </div>
+
             </div>
         </div>
 
-        <div class="comida">
-            <div class="contenedorcomida">
-                <label class="tiposComida comidamexicana"></label>
-                <img src="assets/images/mexicana2.jpg" class="foodimg" alt="">
+        <!-- Modales -->
+
+        <div class="modal fade" id="tacos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tacos">La casa de Toño</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.7207907693855!2d-99.16532565780963!3d19.42446615692615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff3663d7a891%3A0xea2960938f6d444f!2sLa+Casa+de+To%C3%B1o+-+Zona+Rosa!5e0!3m2!1ses!2smx!4v1516642490224"
+                            width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <p>Comida mexicana</p>
+                        <p>Comida Mexicana</p>
+                        <p> Dirección: Londres 144, Cuauhtémoc, Juárez, 06600 Ciudad de México, CDMX</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrar"> Close</button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="comida">
-            <div class="contenedorcomida">
-                <label class="tiposComida comidachina"></label>
-                <img src="assets/images/china1.jpg" class="foodimg" alt="">
+        <div class="modal fade" id="tradicional" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tradicional">La Casa de las Enchiladas Lerma</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.686813470791!2d-99.17227794357622!3d19.425933283297972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff4bf3e8ce4f%3A0x5738979fb91dc4d0!2sLa+Casa+de+las+Enchiladas+Lerma!5e0!3m2!1ses!2smx!4v1516642581792"
+                            width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <p>Comida Mexicana</p>
+                        <p>Comida Mexicana</p>
+                        <p> Dirección: Calle Río Lerma 257, Condesa, 06140 Ciudad de México, CDMX</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrar"> Close</button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="comida">
-            <div class="contenedorcomida">
-                <label class="tiposComida comidachina"></label>
-                <img src="assets/images/china2.jpg" class="foodimg" alt="">
+        <div class="modal fade" id="china" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Casa Virginia Mónica Patiño</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8715557937476!2d-99.16549600414258!3d19.417954896995784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff39a76d5e85%3A0x77951623467bc3a7!2sCasa+Virginia+M%C3%B3nica+Pati%C3%B1o!5e0!3m2!1ses!2smx!4v1516640236330"
+                            width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <p>Comida internacional</p>
+                        <p> Dirección: Begonia 89, Los Ángeles, 09830 Ciudad de México, CDMX</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrar"> Close</button>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="modal fade" id="china2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Casa Virginia Mónica Patiño</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8715557937476!2d-99.16549600414258!3d19.417954896995784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff39a76d5e85%3A0x77951623467bc3a7!2sCasa+Virginia+M%C3%B3nica+Pati%C3%B1o!5e0!3m2!1ses!2smx!4v1516640236330"
+                            width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <p>Comida internacional</p>
+                        <p> Dirección: Begonia 89, Los Ángeles, 09830 Ciudad de México, CDMX</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrar"> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="internacional" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Casa Virginia Mónica Patiño</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8715557937476!2d-99.16549600414258!3d19.417954896995784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff39a76d5e85%3A0x77951623467bc3a7!2sCasa+Virginia+M%C3%B3nica+Pati%C3%B1o!5e0!3m2!1ses!2smx!4v1516640236330"
+                            width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <p>Comida internacional</p>
+                        <p> Dirección: Begonia 89, Los Ángeles, 09830 Ciudad de México, CDMX</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrar"> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="pizza" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="pizza">Pizza del Perro Negro</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8804573190396!2d-99.16945494464863!3d19.417570391109273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff4709285507%3A0xbbb2cd252c5b4946!2sPizza+del+Perro+Negro!5e0!3m2!1ses!2smx!4v1516641911906"
+                            width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <p>Pizza</p>
+                        <p>Dirección: Parque España 3, Roma Nte., 06700 Ciudad de México, CDMX</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrar"> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
 
 
     </main>
     <!--vinculo con script de app.js -->
-
     <script src="js/app.js"></script>
+
 </body>
 
 </html>
